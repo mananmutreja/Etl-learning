@@ -2,10 +2,6 @@ import pandas as pd
 import json
 import os
 
-
-print("Current working directory:", os.getcwd())
-
-
 def extract_data_from_csv(file_path):
     print(f"Extracting data from {file_path}")
     return pd.read_csv(file_path)
@@ -48,7 +44,7 @@ def load_data_to_json(df, output_path):
     df.to_json(output_path, orient='records', lines=True)
 
 
-def etl_process():
+def main():
 
 
     csv_data = extract_data_from_csv('../data/input/dataset1.csv')
@@ -67,4 +63,5 @@ def etl_process():
     load_data_to_json(transformed_data, '../data/output/transformed_data.json')
     print("ETL process completed")
 
-etl_process()
+if __name__ == "__main__":
+    main()
