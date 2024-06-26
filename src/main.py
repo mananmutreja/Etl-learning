@@ -86,7 +86,13 @@ def main():
     print(df3.iloc[[0,2],[1,2]])
     print(df3)
 
+    # df=df.max(axis=1)
+    # print(df)
 
+    # pivot table
+    df=df.drop_duplicates()
+    # df=df.pivot(index="salary",columns="age")
+    print(df)
 
 
 
