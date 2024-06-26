@@ -15,21 +15,7 @@ def extract_data_from_json(file_path):
 
 def transform_data(df):
     print("Transforming data")
-    # Example transformation: Filter records with salary > 50000
-
-    # df_filtered['salary'] = df['salary'].astype('float')
-    # df.rename(columns={'name':'employee_name'},inplace=True)
-
-    df=df.rename(columns={'name': 'employee_name'})
-    # df = df.rename(columns={'name': 'employee_name'})  # Avoid inplace=True
-    print("hnn haii")
-
     df_filtered = df[df['salary'] > 50000]
-
-
-    # df_filtered['salary_in_k'] = df_filtered['salary'] / 1000
-
-    # df_filtered=df.dropna(inplace=True)
 
     return df_filtered
 
@@ -46,12 +32,85 @@ def load_data_to_json(df, output_path):
 
 def main():
 
-
     csv_data = extract_data_from_csv('../data/input/dataset1.csv')
     json_data = extract_data_from_json('../data/input/dataset.json')
+    df=csv_data
+
+    # saving df to another csv without index
+    csv_data.to_csv('../data/output/transform_index_false.csv',index=False)
+
+    # last few lines at tail, head
+    print(csv_data.tail(2))
+
+    # mean, median, mode, max, min : statistics
+    print(csv_data.describe())
+
+    # column changes
+    # df['name'][4]='Jessus'
+    print(df['name'][4])
+
+    # type i.e Series or DF
+    print(type(df['id']))
+
+    # Range of index, columns
+    print(df.columns)
+    print(df.index)
+    print(df.head())
+
+    # Sorting
+    df=df.sort_index(axis=1,ascending=False)
+    print(df)
+    df=df.sort_index(axis=1,ascending=True)
+    print(df)
+
+    # renaming
+    df=df.rename(columns={'name':'emp_name'})
+    print(df.head(2))
+
+    # copy fn, using the view,  dropping the null lines
+    df2=df.copy()
+    df2.loc[0,'age']=1234
+    df2.loc[0,0]='rtyui'
+    df2=df2.dropna()
+    print(df2.head())
+
+    # dropping a column or row
+    df2.drop('salary',axis=1,inplace = True)  # column
+    # df2.drop([2])   # row
+    print(df2)
+
+    # filtering with conditions (loc, iloc)
+    df3=df.copy()
+    df3=df3.loc[(df['performance_score']<90) & (df3['salary']>46000)]
+    df3.loc[2,'age'] = 67
+    print(df3.iloc[[0,2],[1,2]])
+    print(df3)
 
 
-    print("Combining data")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    print("Space hai bhaiya")
+    # print the df file
+
+
+
+
+
     # combined_data = pd.concat([csv_data, json_data], ignore_index=True).drop_duplicates()
     combined_data=csv_data.drop_duplicates()
 
