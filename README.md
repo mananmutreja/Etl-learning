@@ -1,2 +1,0 @@
-# Etl-learning
-pandas

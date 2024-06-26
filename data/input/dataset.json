@@ -1,0 +1,12 @@
+[
+    {"id": 1, "name": "John Doe", "age": 30, "department": "Sales", "salary": 50000},
+    {"id": 2, "name": "Jane Smith", "age": 25, "department": "Engineering", "salary": 60000},
+    {"id": 3, "name": "Emily Davis", "age": 35, "department": "HR", "salary": 55000},
+    {"id": 4, "name": "Michael Brown", "age": 40, "department": "Marketing", "salary": 70000},
+    {"id": 5, "name": "Jessica Wilson", "age": 28, "department": "Engineering", "salary": 62000},
+    {"id": 6, "name": "William Johnson", "age": 45, "department": "Sales", "salary": 48000},
+    {"id": 7, "name": "Linda Martinez", "age": 32, "department": "HR", "salary": 52000},
+    {"id": 8, "name": "David Anderson", "age": 38, "department": "Marketing", "salary": 68000},
+    {"id": 9, "name": "Sarah Lee", "age": 27, "department": "Engineering", "salary": 59000},
+    {"id": 10, "name": "Daniel White", "age": 50, "department": "Sales", "salary": 46000}
+]
